@@ -6,7 +6,7 @@ import (
 )
 
 var (
-	UDPConn, UDPConnErr = net.DialUDP("udp", nil, UDPAddr)
+	UDPConn, UDPConnErr = net.Dial("udp", UDPAddr)
 	UDPAddr             = ""
 )
 

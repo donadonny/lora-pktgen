@@ -11,38 +11,17 @@ package main
 import (
 	"fmt"
 	"log"
-	"os"
 
-	"github.com/mainflux/mainflux-cli/cmd"
+	"github.com/mainflux/lora-pktgen/cmd"
 	"github.com/spf13/cobra"
-
-	"github.com/BurntSushi/toml"
 )
-
-// Config struct
-type Config struct {
-	// LoRa Network Server to send packets to
-	UDPHost string
-	UDPPort int
-}
 
 func main() {
 
 	var s string
 
-	var confFile = "config.toml"
-	var conf Config
-
-	conf.UDPHost = "0.0.0.0"
-	conf.UDPPort = 1680
-
-	// get current directory location
-	pwd, err := os.Getwd()
-	if err != nil {
-		fmt.Println(err)
-	} else {
-		confFile = pwd + "/" + confFile
-	}
+	UDPHost := "0.0.0.0"
+	UDPPort := 1680
 
 	// print mainflux-cli banner
 	fmt.Println(banner)
@@ -62,13 +41,8 @@ func main() {
 	var rootCmd = &cobra.Command{
 		Use: "maninflux-cli",
 		PersistentPreRun: func(cmdCobra *cobra.Command, args []string) {
-			// Parse conf file
-			if _, err := toml.DecodeFile(confFile, &conf); err != nil {
-				fmt.Println("< ! > Using default configuration")
-				fmt.Println("< ! > " + err.Error() + "\n")
-			}
 			// Set UDP server address
-			cmd.SetServerAddr(conf.UDPHost, conf.UDPPort)
+			cmd.SetServerAddr(UDPHost, UDPPort)
 		},
 	}
 
@@ -77,11 +51,9 @@ func main() {
 
 	// Root Flags
 	rootCmd.PersistentFlags().StringVarP(
-		&confFile, "config", "c", confFile, "Config file path")
-	rootCmd.PersistentFlags().StringVarP(
-		&conf.UDPHost, "host", "m", conf.UDPHost, "HTTP Host address")
+		&UDPHost, "host", "m", UDPHost, "UDP Host address")
 	rootCmd.PersistentFlags().IntVarP(
-		&conf.UDPPort, "port", "p", conf.UDPPort, "HTTP Host Port")
+		&UDPPort, "port", "p", UDPPort, "UDP Host Port")
 
 	if err := rootCmd.Execute(); err != nil {
 		log.Fatal(err)

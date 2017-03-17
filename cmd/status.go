@@ -8,16 +8,11 @@
 
 package cmd
 
-import (
-	"fmt"
-)
-
 // Status
 func Status() string {
 	// Exit on error
 	if UDPConnErr != nil {
-		fmt.Println("Cannot connect to LoRa Network Server - UDP connection error.")
-		return
+		return "Cannot connect to LoRa Network Server - UDP connection error."
 	}
 
 	return "OK"
