@@ -8,10 +8,17 @@
 
 package cmd
 
-// Status - server health check
-func Status() string {
-	url := UrlHTTP + "/status"
-	body := GetHttpRespBody(netClient.Get(url))
+import (
+	"fmt"
+)
 
-	return GetPrettyJson(body)
+// Status
+func Status() string {
+	// Exit on error
+	if UDPConnErr != nil {
+		fmt.Println("Cannot connect to LoRa Network Server - UDP connection error.")
+		return
+	}
+
+	return "OK"
 }
