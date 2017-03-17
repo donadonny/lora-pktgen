@@ -34,7 +34,7 @@ and then compile it and install the binary in `$GOBIN` directory.
 
 Now you can run the program with:
 ```
-mainflux-cli
+lora-pktgen
 ```
 if `$GOBIN` is in `$PATH` (otherwise use `$GOBIN/lora-pktgen`)
 
