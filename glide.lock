@@ -1,0 +1,10 @@
+hash: 3d30513155272875ba7430dab253eff5c4b4f40d4e014a7594b93b7faf2fabf9
+updated: 2016-12-07T22:14:39.444980494+01:00
+imports:
+- name: github.com/abiosoft/ishell
+  version: a7612be24192ddf96ba5f1fd5654d2e96a7553c7
+- name: github.com/flynn/go-shlex
+  version: 3f9db97f856818214da2e1057f8ad84803971cff
+- name: gopkg.in/readline.v1
+  version: 62c6fe6193755f722b8b8788aa7357be55a50ff1
+testImports: []

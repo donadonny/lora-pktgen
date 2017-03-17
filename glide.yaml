@@ -1,0 +1,3 @@
+package: github.com/mainflux/mainflux-cli
+import:
+- package: github.com/abiosoft/ishell
