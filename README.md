@@ -1,11 +1,11 @@
-# LoRaWAN Package Generator
+# LoRaWAN Packet Generator (GW Simulator)
 
 [![License](https://img.shields.io/badge/license-Apache%20v2.0-blue.svg)](LICENSE)
 [![Build Status](https://travis-ci.org/mainflux/mainflux-cli.svg?branch=master)](https://travis-ci.org/mainflux/mainflux-cli)
 [![Go Report Card](https://goreportcard.com/badge/github.com/Mainflux/mainflux-cli)](https://goreportcard.com/report/github.com/Mainflux/mainflux-cli)
 [![Join the chat at https://gitter.im/Mainflux/mainflux](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/Mainflux/mainflux?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-LoRaWAN package generator is a command line tool for generation of UDP packages that can be sent from the PC host to the LoRa Network Server. It simulates LoRaWAN gateway and sends the UDP packages defined by the "Gateway to Server Interface Protocol" defined in [Semtech document ANNWS.01.2.1.W.SYS](https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjg44KhsN7SAhXpYZoKHVduAJEQFggaMAA&url=https%3A%2F%2Fwww.thethingsnetwork.org%2Fforum%2Fuploads%2Fdefault%2Foriginal%2F1X%2F4fbda86583605f4aa24dcedaab874ca5a1572825.pdf&usg=AFQjCNFfztbcaVB002yqLD3393nCDuJiaA&sig2=jkHvDwmrzKg7ePCSM25UOA&bvm=bv.149760088,d.bGs). Protocol is also described [here](https://github.com/Lora-net/packet_forwarder/blob/master/PROTOCOL.TXT).
+LoRaWAN packet generator is a command line tool for generation of UDP packets that can be sent from the PC host to the LoRa Network Server. It simulates LoRaWAN gateway and sends the UDP packages defined by the "Gateway to Server Interface Protocol" defined in [Semtech document ANNWS.01.2.1.W.SYS](https://www.google.fr/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwjg44KhsN7SAhXpYZoKHVduAJEQFggaMAA&url=https%3A%2F%2Fwww.thethingsnetwork.org%2Fforum%2Fuploads%2Fdefault%2Foriginal%2F1X%2F4fbda86583605f4aa24dcedaab874ca5a1572825.pdf&usg=AFQjCNFfztbcaVB002yqLD3393nCDuJiaA&sig2=jkHvDwmrzKg7ePCSM25UOA&bvm=bv.149760088,d.bGs). Protocol is also described [here](https://github.com/Lora-net/packet_forwarder/blob/master/PROTOCOL.TXT).
 
 Basically, `lora-pktgen` acts as a LoRa node + LoRa GW, i.e. it generates a package from a user-defined payload and adds service information in JSON that are injected by Packet Forwarder during the packet traversing through GW. This way LoRa Network Server get a properly shaped UDP packet, like the one that would come from a real HW.
 
