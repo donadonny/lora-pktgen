@@ -26,7 +26,7 @@ export PATH=$PATH:$GOBIN
 #### Get the code
 Use [`go`](https://golang.org/cmd/go/) tool to "get" (i.e. fetch and build) `lora-pktgen` package:
 ```bash
-go get github.com/mainflux/lora-pktgen
+go get github.com/donadonny/lora-pktgen
 ```
 
 This will download the code to `$GOPATH/src/github.com/mainflux/lora-pktgen` directory,
